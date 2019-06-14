@@ -1,43 +1,77 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Home'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+      body: ListView(
+        children: <Widget>[
+          Container(
+            color: Theme.of(context).primaryColor,
+            height: 300,
+          ),
+          Container(
+            padding: EdgeInsets.all(32),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  'Orange and White',
+                  style: Theme.of(context).textTheme.display1.copyWith(
+                        color: Theme.of(context).primaryColor,
+                      ),
+                ),
+                Text(
+                  'Application',
+                  style: Theme.of(context).textTheme.display1,
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(vertical: 32),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        color: Theme.of(context).primaryColor,
+                        height: 10,
+                        width: 50,
+                      ),
+                      Container(
+                        color: Colors.grey[300],
+                        height: 10,
+                        width: 150,
+                      )
+                    ],
+                  ),
+                )
+              ],
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+          ),
+          Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: SizedBox(
+              width: 300,
+              child: RaisedButton(
+                color: Theme.of(context).primaryColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16)
+                ),
+                child: Text(
+                  'Get Strarted',
+                  style: Theme.of(context)
+                      .textTheme
+                      .title
+                      .copyWith(color: Colors.white),
+                ),
+                onPressed: () {},
+              ),
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
+          ),
+          Container(
+            padding: EdgeInsets.all(32),
+            alignment: Alignment.center,
+            child: Text('2019 \u00a9 bakhtiararifin'),
+          )
+        ],
       ),
     );
   }
