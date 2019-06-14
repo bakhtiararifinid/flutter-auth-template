@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class RegisterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +31,26 @@ class LoginPage extends StatelessWidget {
             height: 100,
           ),
           Text(
-            'Welcome Back!',
+            'Join Us!',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.display1,
           ),
           Container(
             padding: EdgeInsets.all(8),
-            margin: EdgeInsets.all(16),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: Theme.of(context).buttonColor,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: TextFormField(
+              decoration: InputDecoration.collapsed(
+                hintText: 'Name',
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(8),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
               color: Theme.of(context).buttonColor,
               borderRadius: BorderRadius.circular(8),
@@ -50,7 +63,20 @@ class LoginPage extends StatelessWidget {
           ),
           Container(
             padding: EdgeInsets.all(8),
-            margin: EdgeInsets.symmetric(horizontal: 16),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: Theme.of(context).buttonColor,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: TextFormField(
+              decoration: InputDecoration.collapsed(
+                hintText: 'Phone',
+              ),
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(8),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
               color: Theme.of(context).buttonColor,
               borderRadius: BorderRadius.circular(8),
@@ -61,13 +87,26 @@ class LoginPage extends StatelessWidget {
               ),
             ),
           ),
+          Container(
+            padding: EdgeInsets.all(8),
+            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            decoration: BoxDecoration(
+              color: Theme.of(context).buttonColor,
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: TextFormField(
+              decoration: InputDecoration.collapsed(
+                hintText: 'Confirm Password',
+              ),
+            ),
+          ),
           SizedBox(
             height: 50,
           ),
           Container(
             padding: EdgeInsets.all(16),
             child: RaisedButton(
-              child: Text('Login'),
+              child: Text('Sign Up'),
               textColor: Colors.white,
               color: Theme.of(context).primaryColor,
               shape: RoundedRectangleBorder(
@@ -76,80 +115,18 @@ class LoginPage extends StatelessWidget {
               onPressed: () {},
             ),
           ),
-          FlatButton(
-            child: Text(
-              'Forgot Password?',
-              style: TextStyle(color: Theme.of(context).primaryColor),
-            ),
-            onPressed: () {},
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: <Widget>[
-              OutlineButton(
-                padding: EdgeInsets.all(8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/images/logofb.png',
-                      height: 20,
-                      width: 20,
-                    ),
-                    Text(
-                      ' Login with FB',
-                      style: Theme.of(context).textTheme.subtitle.copyWith(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Colors.blue[700],
-                          ),
-                    ),
-                  ],
-                ),
-                onPressed: () {},
-              ),
-              OutlineButton(
-                padding: EdgeInsets.all(8),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/images/logogugel.png',
-                      height: 20,
-                      width: 20,
-                    ),
-                    Text(
-                      ' Login with Google',
-                      style: Theme.of(context).textTheme.subtitle.copyWith(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Colors.red),
-                    ),
-                  ],
-                ),
-                onPressed: () {},
-              ),
-            ],
-          ),
-          SizedBox(height: 32),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('Dont have an account? '),
+              Text('Already have an account? '),
               InkWell(
                 child: Text(
-                  'Sign Up',
+                  'Login',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                onTap: () => Navigator.of(context).pushNamed('/register'),
+                onTap: () => Navigator.of(context).pop(),
               )
             ],
           ),
