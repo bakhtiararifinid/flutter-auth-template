@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth_template/src/pages/home_page.dart';
+import 'package:flutter_auth_template/src/pages/boarding_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -9,7 +9,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.deepOrange,
       ),
-      home: HomePage(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => BoardingPage(),
+      },
     );
   }
 }
