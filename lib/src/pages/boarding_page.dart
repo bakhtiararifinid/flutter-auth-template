@@ -4,11 +4,12 @@ class BoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(elevation: 0),
       body: ListView(
         children: <Widget>[
           Container(
             color: Theme.of(context).primaryColor,
-            height: 300,
+            height: 250,
           ),
           Container(
             padding: EdgeInsets.all(32),
@@ -53,7 +54,7 @@ class BoardingPage extends StatelessWidget {
               child: RaisedButton(
                 color: Theme.of(context).primaryColor,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16)
+                  borderRadius: BorderRadius.circular(16),
                 ),
                 child: Text(
                   'Get Strarted',
@@ -62,7 +63,7 @@ class BoardingPage extends StatelessWidget {
                       .title
                       .copyWith(color: Colors.white),
                 ),
-                onPressed: () {},
+                onPressed: () => Navigator.of(context).pushNamed('/login'),
               ),
             ),
           ),

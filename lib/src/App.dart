@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_template/src/pages/boarding_page.dart';
+import 'package:flutter_auth_template/src/pages/login_page.dart';
 
 class App extends StatelessWidget {
   @override
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => BoardingPage(),
+        '/login': (context) => LoginPage(),
       },
     );
   }
